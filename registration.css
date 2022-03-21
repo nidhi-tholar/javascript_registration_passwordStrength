@@ -1,0 +1,143 @@
+body {
+    font-size: medium;
+	font-size: 20px;
+  }
+
+/* * {
+box-sizing: border-box;
+} */
+
+header{
+    margin-top: 30px;
+    color:green;
+	height: 70px;
+	font-size: 40px;
+}
+
+.formTable{
+	margin-left: 50px;
+	margin-top: 30px;
+}
+
+
+#inputField{
+    padding-top: 10px;
+    float: left;
+}
+
+.label{
+	text-align: right;
+    padding-right: 10px;
+}
+
+input{
+    height: 25px;
+	width: 200px;
+}
+
+
+.buttons{
+    margin-top: 20px;
+    margin-left: 145px;
+}
+
+.btn{
+    font-size: 18px;
+    padding: 7px 13px;
+    border: none;
+    color: white;
+}
+
+.register{
+    background-color: #16c585;
+    
+}
+
+.cancel{
+    background-color:rgb(214, 112, 112);
+}
+
+#invalidPassword{
+	color: red;
+	display: none;
+}
+
+#passNoMatch{
+	color: red;
+	display: none;
+}
+
+#passwordRules{
+	background-color: purple;
+	color: white;
+	display: none;
+	position: absolute;
+	width: 350px;
+    padding: 7px 10px;
+    font-size: 15px;
+}
+
+#emailNoMatch{
+    display: none;
+    float: right;
+}
+
+#emailValidation{
+    float: right;
+    display: none;
+}
+
+#passwordStrengthModal{
+    display: none;
+    border: solid black 2px;
+    padding-bottom: 20px;
+    position: absolute;
+}
+
+#upperSatisfied{
+     display: none;
+     float: left;
+}
+
+#lowerSatisfied{
+    display: none;
+    float: left;
+}
+
+#numberSatisfied{
+    display: none;
+    float: left;
+}
+
+#lengthSatisfied{
+    display: none;
+    float: left;
+}
+
+#charNotSatisfied{
+    display: none;
+    float: left;
+}
+
+#notUserNotSatisfied{
+    display: none;
+    float: left;
+}
+
+
+.psHeader{
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding: 3px 10px;
+}
+
+.psBody{
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    padding: 0px 10px;
+    margin-left: 5px;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="registration.css">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            Registration
+            <hr>
+        </header>
+        
+        <form id="form">
+            <table class="formTable">
+                <tr>
+                    <td class="label">User ID</td>
+                    <td id="inputField"><input type="text" name="userID" id="userID" required></td>
+                </tr>
+
+                <tr>
+                    <td class="label">Password</td>
+                    <td id="inputField">
+                        <table>
+                            <tr>
+                                <td> <input type="password" name="password" id="password" onfocus="onPassword()" onblur="offPassword()" oninput="checkPassword()" required></td>
+                                <td id="passwordRules">
+                                    <span>Must be between 8-20 characters in length and include atleast 1 upper, 1 lower and 1 numeric character (0, 9). Special character that are allowed are !,#,$,%. The password is case sensitive and must not contain spaces or be the same as your User ID.</span>
+                                </td>
+                                
+                                <td id="passwordStrengthModal">
+                                    <p class="psHeader">Password Strength</p>
+                                    <div class="psBody">
+                                        <p><span id="upperSatisfied"style="color:green;">&#10004;</span>&nbsp;1 upper-case letter</p>
+                                        <p><span id="lowerSatisfied"style="color:green;">&#10004;</span>&nbsp;1 lower-case letter</p>
+                                        <p><span id="numberSatisfied"style="color:green;">&#10004;</span>&nbsp;1 number</p>
+                                        <p><span id="lengthSatisfied"style="color:green;">&#10004;</span>&nbsp;8 or more characters</p>
+                                        <p><span id="charNotSatisfied" style="color:red;">&#10006;</span>&nbsp;Uses only these English characters: A-z, 0-9, @, -, _ and .</p>
+                                        <p><span id="notUserNotSatisfied"style="color:red;">&#10006;</span>&nbsp;Your password can not be the same as your user ID.</p>
+                
+                                        <span style="font-size: 18px;">Strength:</span>
+                                        <progress value = "0" max="100"></progress>
+                                    </div>
+                                </td>
+                                <td class="invalid" id="invalidPassword">Invalid Password</td>
+                            
+                            </tr>
+                        </table>
+                        
+                </tr>
+                <tr>
+                    <td class="label">Verify Password</td>
+                    <td id="inputField">
+                        <table>
+                            <td>
+                                <input type="password" name="vPassword" id="vPassword" required onblur="verifyPassword()" onkeyup="verifyPassword()">
+                            </td>
+                            <td class="nomatch" id="passNoMatch">Password Doesn't Match.</td>	
+                        </table>
+                    </td>	
+                </tr>
+                <tr>
+                    <td class="label">Email Address</td>
+                    <td id="inputField"><input type="email" name="email" id="email" required onblur="checkEmail()" onkeyup="checkEmail()"><span style="color: red;" id="emailValidation">Invalid Email</span></td>
+                </tr>
+                <tr>
+                    <td class="label">Verify Email Address</td>
+                    <td id="inputField"><input type="email" name="vEmail" id="vEmail" required onblur="verifyEmail()" onkeyup="verifyEmail()" required><span style="color: red;" id="emailNoMatch">Email Doesn't Match</span></td>
+                </tr>
+                <tr>
+                    <td class="label">Security Question</td>
+                    <td id="inputField"><select name="secQuestion1" id="secQuestion1" onchange="fillSQ2()" required></select></td>
+                </tr>
+                <tr>
+                    <td class="label">Security Answer</td>
+                    <td id="inputField"><input type="password" name="secAnswer1" id="secAnswer1" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Security Question</td>
+                    <td id="inputField"><select id="secQuestion2"></select></td>
+                </tr>
+                <tr>
+                    <td class="label">Security Answer</td>
+                    <td id="inputField"><input type="password"name="secAnswer2" id="secAnswer2" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Mobile</td>
+                    <td id="inputField"><input  type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-0789" maxlength="12" name="mobile" id="mobile" required></td>
+                </tr>
+                <tr>
+                    <td class="label">Address</td>
+                    <td id="inputField"><textarea id="address" name="address" rows="3" cols="30" required></textarea></td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td id="inputField" style="font-size: 15px; padding-bottom: 0px;">Areas you may be interested in, please enter one or more</td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td><textarea name="interestAreas" id="interestAreas"rows="5" cols="50" class="textar" required></textarea></td>
+                </tr>
+                <tr>
+                    <td class="label"></td>
+                    <td id="inputField">
+                        <button type="submit" class="btn register" onclick="register()">Register</button>
+                        <button type="reset"  class="btn cancel"  onclick="resetForm()">Cancel</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+    <script type="text/javascript" src="registration.js"></script>
+
+</body>
+</html>
